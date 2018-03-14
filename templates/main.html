@@ -1,0 +1,71 @@
+		<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Watson Developer Cloud Services</title>
+</head>
+
+<body>
+<table cellpadding="10" align="center">
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td></td>
+<td align="center">
+ <div><img src="https://www.cognizant.com/content/dam/Cognizant_Dotcom/images/cognizant-logo.png" alt="" width="140px" height="70px" align="center"/>     
+  </div>
+  </td>
+	<td align="center"><div align="center"  style="background-size: contain; font-size: 50px"><img src="http://www.lifeherotile.eu/wp-content/uploads/2015/10/braasmonier.png" alt="" width="140px" height="140px" align="center"/>Brass Monier Solution</div></td>
+	<td><div align="right" > Last Login :Admin<p id="time"></p>
+<script>
+var currentdate = new Date(); 
+var datetime =  currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + "   "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+document.getElementById("time").innerHTML =datetime;
+</script> 
+  </div></td>
+  <td></td>
+  </tr>
+  <tr rowspan="4">
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+ <tr>
+ <td></td>
+ <tr>
+ <td> 
+   <form action="visualRecog/" method="Post" enctype = "multipart/form-data">
+ 
+    <td>
+	Face Detection And Text Recognition<br>
+	</td>
+	<td> <input type="submit" name="Analyse" value="Go"></td>
+	<td></td>
+	</form>
+</td>
+</tr>
+<tr>
+<td> 
+   <form action="speechDetection/" method="Post" enctype = "multipart/form-data">
+	<td>
+	Speech to Text<br>
+	</td>
+	<td> <input type="submit" name="AnalyseSpeech" value="Go"></td>
+	<td></td>
+	</form>
+</td>
+</tr>
+
+</table>
+</body>
+</html>

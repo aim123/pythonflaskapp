@@ -1,0 +1,614 @@
+<!DOCTYPE HTML>
+<!--
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+
+<head>
+	<title>Automated Intent Detection</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="assets/js/bootstrap-filestyle.min.js"></script>
+    
+-->
+	<style type="text/css">
+		*:focus {
+			outline: none;
+		}
+
+		select {
+			appearance: none;
+			-webkit-appearance: none;
+			background-color: transparent;
+			border: 0;
+		}
+
+		.selected-entities select option {
+			display: inline-block;
+		}
+
+		.selected-entities {
+			display: inline-block;
+			vertical-align: top;
+			overflow: hidden;
+		}
+
+		.selected-entities option {
+			border-right: 1px solid black;
+		}
+
+		.select_box {
+			overflow: auto;
+		}
+	</style>
+
+	<style>
+		.accordion {
+			/*  background-color: #eee;*/
+			color: #444;
+			cursor: pointer;
+			/* padding: 18px;*/
+			width: 100%;
+			border: none;
+			text-align: left;
+			outline: none;
+			font-size: 15px;
+			transition: 0.4s;
+		}
+
+		.active,
+		.accordion:hover {}
+
+		.panel1 {
+			max-height: 25em;
+			overflow: auto;
+			padding: 0 18px;
+			display: none;
+			/* background-color: white;
+  */
+			overflow: hidden;
+		}
+	</style>
+
+	<style type="text/css">
+		#fileupload {
+			margin: 1em auto;
+			width: 500px;
+			height: 200px;
+			border: 4px dashed #484848;
+		}
+
+		#fileupload p {
+			position: relative;
+			text-align: center;
+			bottom: 105px;
+			color: #484848;
+			font-family: Arial;
+		}
+
+		#fileupload input {
+			/* position: absolute;*/
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+			outline: none;
+			opacity: 0;
+		}
+	</style>
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+
+	<link rel="stylesheet" href="{{ url_for('static',filename='assets/css/main.css') }}" />
+	<!--		<style type="text/css">
+			input[type=text] {
+				height:34px;
+			}
+		</style>
+
+-->
+</head>
+
+<body>
+
+	<!-- Header -->
+	<!--	<header id="header">
+				<h1><strong><a href="index.html">Spatial</a></strong> by Templated</h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="generic.html">Generic</a></li>
+						<li><a href="elements.html">Elements</a></li>
+					</ul>
+				</nav>
+			</header>
+			-->
+	<header id="header" class="alter">
+		<a href="/"><img style=" padding-top: 10px;padding-left: 10px;height:120px; width:130px;" src="{{ url_for('static',filename='images/Cognizant_White.png') }}" /></a>
+
+		<nav id="nav">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li id="TheDate" style="color:#ddd;"></li>
+			</ul>
+		</nav>
+	</header>
+
+	<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+	<!-- Main -->
+	<section id="main" class="wrapper">
+		<div class="container">
+			<div style="text-align:center;">
+				<header class="major special">
+					<h2>Intent Detection</h2>
+
+				</header>
+			</div>
+			<section>
+				<!--			<form id='roleForm' action='#' method='post' class="form-group">
+	-->				
+
+				<div class="row uniform 50%">
+
+					<!--					<div id="my_photo_booth" class="12u$" style="text-align:center;" >
+-->
+
+
+					<div class="12u$" style="text-align:center;">
+						<p><b>Finalized Intent_Entity_Frequency Distribution</b></p>
+
+						<div class="table-wrapper" style="max-height:600px;overflow:auto;">
+							<table class="alt">
+								<thead>
+									<tr>
+										<th>Intent & Entity Combination (Aggregated)</th>
+										<th>Frequency</th>
+									</tr>
+								</thead>
+								<tbody>
+									  {% for item in output1 %}
+
+
+
+									<tr>
+
+										<td>
+											<button type="button" class="accordion">{{item[0]}}</button>
+											<div style="overflow: auto;" class="panel1 part1">
+												{% for element in item[2]%}                                                        
+												<p>{{element}}</p>
+                                                                                                                                                                                       {% endfor %}
+											</div>
+										</td>
+										<td>
+											<button  type="button" class="accordion">{{item[1]}}</button>
+											<div style="overflow: auto;" class="panel1 part2" >
+										
+
+											</div>
+										</td>
+
+
+									</tr>
+                                     {% endfor %}
+
+					
+
+									<tr>
+					
+
+							
+
+	<!--
+										<td>
+											<button type="button" class="accordion">Section 1</button>
+											<div style="overflow: hidden;" class="panel1 part1">
+												<p>ubuntu</p>
+												<p>ubuntu</p>
+											</div>
+										</td>
+										<td>
+											<button  type="button" class="accordion">Section 1</button>
+											<div style="overflow: auto;" class="panel1 part2" onscroll="OnScroll(this)">
+												<p>ubuntu</p>
+												<p>ubuntu</p>
+
+											</div>
+										</td>
+
+
+									</tr>-->
+									<!--	<tr>
+											<td>ubuntu</td><td>ubuntu</td>
+
+											<td>ubuntu</td><td>ubuntu</td>
+											<td>ubuntu</td><td>ubuntu</td>
+										</tr>
+						-->
+								</tbody>
+
+							</table>
+						</div>
+					</div>
+
+					
+					
+
+	<div class="12u$" style="text-align:center">
+						<ul class="actions">
+							<li><a href="{{url_for('static',filename=output2)}}" download><input type="button" value="DOWNLOAD IN JSON FORMAT" class="special" /></a></li>
+						</ul>
+				</div>
+				</div>
+
+			<!--	<div class="6u 12u$(xsmall)">
+					<p><b>Your probable intents (covering top x% of all Intents):</b></p>
+					<div class="table-wrapper" style="max-height:400px;overflow:auto;">
+						<table class="alt">
+
+							<thead>
+								<tr>
+									<th>Column #</th>
+									<th>Intent Name</th>
+
+								</tr>
+							</thead>
+							<tbody>
+			-->					<!--										  {% for row in rows %}
+		{{ loop.index }}			{{ row.time }} 
+-->
+
+			<!--					<tr>
+			-->						<!--										  {% for item in row %}
+
+												{{item}}
+-->
+<!--
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+								</tr>
+-->
+								<!--							{% endfor %}		  {% endfor %}-->
+<!--
+								<tr>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+
+								</tr>
+								<tr>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+								</tr>
+								<tr>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+								</tr>
+								<tr>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+									<td>ubuntu</td>
+								</tr>
+							</tbody>-->
+							<!--		<tfoot>
+										<tr>
+											<td colspan="2"></td>
+											<td>100.00</td>
+										</tr>
+									</tfoot>-->
+			<!--			</table>
+					</div>
+
+				</div>
+				<div class="6u$ 12u$(xsmall)">
+					<p><b>Your probable entities:</b></p>
+					<div class="table-wrapper" style="max-height:400px;overflow:auto;">
+						<table class="alt">
+							<thead>
+								<tr>
+									<th>Entity Name</th>
+									<th>Value</th>
+								</tr>
+							</thead>
+							<tbody>
+			-->					<!--										  {% for row in rows %}
+		{{ loop.index }}			{{ row.time }} 
+-->
+
+			<!--					<tr>
+			-->						<!--										  {% for item in row %}
+
+												{{item}}
+-->
+
+			<!--						<td>OperatingSystem</td>
+									<td>ubuntu <b>,</b> xubuntu <b>,</b> kubuntu <b>,</b> linux <b>,</b> windows</td>
+								</tr>
+
+								<!--							{% endfor %}		  {% endfor %}-->
+<!--
+								<tr>
+									<td>Software</td>
+									<td>vnc <b>,</b> codecs <b>,</b> gxine</td>
+
+								</tr>
+								<tr>
+									<td>Device</td>
+									<td>computer <b>,</b> desktop <b>,</b> server<b> , </b>ipod</td>
+
+								</tr>
+								<tr>
+									<td>Browser</td>
+									<td>chrome <b>,</b> firefox <b>,</b> Internet Explorer <b>,</b> Opera </td>
+
+								</tr>
+
+							</tbody>-->
+							<!--		<tfoot>
+										<tr>
+											<td colspan="2"></td>
+											<td>100.00</td>
+										</tr>
+									</tfoot>-->
+					<!--	</table>
+					</div>
+				</div>-->
+
+				<!--	<div class="12u$" style="text-align:center">
+							<ul class="actions">
+								<li><input type="button" value="Submit" class="special" /></li>
+					-->
+				<!--change button to submit if you post the photo . If with javascript then using button-->
+				<!--			<li><input type="button" value="Reset" /></li>
+					-->
+				<!--show if person not detected-->
+				<!--		</ul>
+						</div>
+-->
+
+		
+
+		<!--	</form>
+-->
+
+
+		</section>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<!--			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-facebook"></a></li>
+						<li><a href="#" class="icon fa-twitter"></a></li>
+						<li><a href="#" class="icon fa-instagram"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled</li>
+						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+					</ul>
+				</div>
+			</footer>
+-->
+	<!-- Scripts -->
+	<!-- First, include the Webcam.js JavaScript Library -->
+	<!--	<script type="text/javascript" src="assets/js/webcam.min.js"></script>
+	<script type="text/javascript" src="assets/js/camopen.js"></script>
+	<script type="text/javascript" src="assets/js/webcamfunctions.js"></script>
+
+-->
+
+	<script src="{{ url_for('static',filename='assets/js/jquery.min.js') }}"></script>
+
+	<!--<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+-->
+	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="{{ url_for('static',filename='assets/js/multiselect.js') }}"></script>
+
+	<script type="text/javascript" src="{{ url_for('static',filename='assets/js/multiselect.js') }}"></script>
+
+	<script src="{{ url_for('static',filename='assets/js/skel.min.js') }}"></script>
+	<script src="{{ url_for('static',filename='assets/js/util.js') }}"></script>
+	<script src="{{ url_for('static',filename='assets/js/main.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='assets/js/custom.js') }}"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fileupload input').change(function() {
+				$('#fileupload p').html(this.files.length + " file(s) selected</br>");
+				/*  $.each(this.files,function(intIndex,objValue){
+				  	    $('#fileupload p').append(objValue.name + "</br>");
+
+				  	
+				  	
+				  });*/
+			});
+
+
+			$('#undo_redo').multiselect();
+		
+		});
+	</script>
+
+	<script type="text/javascript">
+	</script>
+	<script type="text/javascript">
+		function OnScroll(element) {
+			var d1 = element.parentElement.parentElement.getElementsByClassName("part1")[0];
+			d1.scrollTop = element.scrollTop;
+
+		}
+
+		function removeSE(element) {
+			document.getElementById("undo_redo_leftAll").click();
+			var row = element.parentElement.parentElement.parentElement;
+			var select_box = row.getElementsByClassName("select_box")[0];
+			var options = select_box.innerHTML;
+			var sendtobox = document.getElementById('undo_redo_to');
+			var options = sendtobox.innerHTML + options;
+			sendtobox.innerHTML = options;
+			row.parentElement.removeChild(row);
+
+
+		}
+
+		function ublock(element) {
+			var textbox = element.parentElement.parentElement.getElementsByClassName("entitycname")[0];
+			if (element.value == 0) {
+				if (textbox.value.length > 0) {
+					textbox.disabled = true;
+					element.innerHTML = "Edit"
+					element.value = 1;
+				}
+			}
+			else {
+				textbox.disabled = false;
+				element.innerHTML = "SAVE";
+				element.value = 0;
+
+			}
+
+		}
+
+		function addSE() {
+
+			var saved_data = document.getElementById("saved_data");
+			if (!($('#undo_redo_to option').length == 0)) {
+				//				saved_data.
+				if (document.getElementById("dp_entities").value == "") {
+					var newdiv = document.createElement('div'); //create a div
+					newdiv.className = "row";
+					var div1 = document.createElement('div');
+					div1.className = "col-xs-6";
+					var div11 = document.createElement('div');
+					div11.className = "selected-entities";
+					var selectb = document.createElement('select');
+					selectb.size = "2";
+					selectb.disabled = true;
+					selectb.name = "selected"
+					selectb.className = "select_box";
+					selectb.innerHTML = document.getElementById("undo_redo_to").innerHTML;
+					$('#undo_redo_to').html('');
+					div11.appendChild(selectb);
+					div1.appendChild(div11);
+					var div2 = document.createElement('div');
+					div2.className = "col-xs-6";
+					var div21 = document.createElement('div');
+					div21.className = "col-xs-6";
+					var input = document.createElement("input");
+					input.type = "text";
+					input.name = "entity_cname";
+					input.placeholder = "Entity Description"
+					input.className = "entitycname";
+					div21.appendChild(input);
+					div2.appendChild(div21);
+					var div22 = document.createElement('div');
+					div22.className = "col-xs-3";
+					var div23 = document.createElement('div');
+					div23.className = "col-xs-3";
+					var b1 = document.createElement("button");
+					var b2 = document.createElement("button");
+					b1.type = "button";
+					b1.innerHTML = "SAVE";
+					b1.className = "btn  btn-block special";
+					b1.value = 0;
+					b1.addEventListener('click', function() {
+						ublock(this);
+					});
+			
+					div22.appendChild(b1);
+					div23.innerHTML = "<button type='button' class='btn  btn-block' onclick='removeSE(this)'>UNDO</button>"
+					div2.appendChild(div22);
+					div2.appendChild(div23);
+					newdiv.appendChild(div1);
+					newdiv.appendChild(div2);
+					saved_data.appendChild(newdiv);
+				}
+				else {
+					var flag = 0;
+					var items = document.getElementsByClassName('entitycname');
+					for (var i = 0; i < items.length; i++) {
+						if (items[i].value == document.getElementById("dp_entities").value) {
+							flag = 1;
+							var req_selectbox = items[i].parentElement.parentElement.parentElement.getElementsByClassName("select_box")[0];
+							var options1 = req_selectbox.innerHTML;
+							var getfrombox = document.getElementById('undo_redo_to');
+							var options1 = options1 + getfrombox.innerHTML;
+							req_selectbox.innerHTML = options1;
+							$('#undo_redo_to').html('');
+							document.getElementById("dp_entities").value = "";
+
+
+						}
+
+					}
+
+					if (flag == 0) {
+
+
+						alert("Old entity of this name not found. try locking entitites without typing anything in merging old entites textbox");
+						document.getElementById("dp_entities").value = "";
+
+					}
+				}
+
+			}
+		}
+	</script>
+	<script>
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+			acc[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				console.log(this);
+
+				var row = this.parentElement.parentElement;
+				console.log(row);
+				var panels = row.getElementsByClassName("panel1");
+				console.log(panels);
+				for (var i = 0; i < panels.length; i++) {
+					if (panels[i].style.display === "block") {
+						panels[i].style.display = "none";
+					}
+					else {
+						panels[i].style.display = "block";
+					}
+				}
+				//  var panel = this.nextElementSibling;
+
+			});
+		}
+	</script>
+
+
+</body>
+
+</html>

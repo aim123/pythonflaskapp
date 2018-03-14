@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "bankerchat-177104",
+  "private_key_id": "e66b473d6e85316afad8e07fffe3ff898639a4d1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC3Sk8z4CeueUNw\nqDPasaigZSJm+N8Y2lxIN1icAguV5nOYI0C++C5S4nfbyt59d3aEXzKliAb8ovAA\n1+Zwl2XW4bXaAOi2NqGzOy+xH0bvDdtdPKa0nbLudpTBgYWOSUWJdqg8Xkbk+NyP\nilAywoISD5A1lbVyN5q+v7WmR755AVSC5aDeRVNvRRpNdWslcWTIWqvl3vuA7Dd9\np3/TlhnDZC8kpEtjxT0TOnjL2YyddRzMbF+lFyY1OE9AFDRPcQp1frI2ZFcGMBIm\nTgcJc2T9ySl/VW4OOGBFyzF9+X/E/CwyMlRnQlpGh7TotYTdllxD2KzqC+2+csWf\nU8Ncqtn3AgMBAAECggEADko7WZKI1Xf7040xmcPPH04zO+78Sc5AcprqDCO2roWs\njnh1JE5qIiko6hhrd0G4mkJnyvMLhGfZqV8rxqxvEq0/RdNbUVV6DuS256rGF34v\nk5nWb296E1BocZu9A2ZgBwMaw7Yf9dsXKxPAA+0ZQfo3po3Y+yItrOB6c4/VYE6h\n9kvBRGZbQVypFhDh/KBb0aqot+hBjYg7wm3TLcyIULFIc0aJ7gV8lUGceVhBaK2B\nLtvUo7lxgZCpkeZwSF1pmB91k1y0Ry/hefAPO1ue5SBhDZgufdxlxu5dpuZNKGoq\nag2hHlsL4y686q9qaoqmi9oI+VS75xubgjbXog5OAQKBgQDa53JJW05ecxRBxhk7\nuGJLShyta5RkcV/frQcdkliFiEGp/aviCCwdRFSOY0sT27dt8qPnkioCTden7ahI\nVGZHLXeaETNwpGhwWPdoY2dXaCmmFLmc/amEWY2kq3gL39y8u0j8SE2CVoqa+ZgJ\nRxaOc/bai2qMVGd72iZnJjMeAQKBgQDWWdrtFejroUiY3KLz50rZj43DbaRGqAvw\nq5ipnrjAPCgzGyWLOWg+aKdZ0Gh0wH4ieDt64H5m0Mw+E/fTFuOvSeD7MeDHUt3E\n7ufIsGAptGwskIy7Pig3eBhYOeUhFuI36iVIlv6NH2EtM9B+q91dzqaIrNr8qmAh\nny6FLUbn9wKBgE8ujR6P0odDpT4thA8gIR4OztTEJ0c143IrSnmd6DtVEDuHMNdw\nEVT81IE01YF3ZqB0tmkba+qtcaaixs5zCRQSFEM8mZjTP5vz8npmComJehdDQ+jP\nsLPZGO1JwQC6l0QFkt7+4FqXJ0frpN0mQ7h/pfljmMTt+wjH3kBNhwwBAoGBAIzj\nWqZitEnMJK90thaie+wsEv3U3xkh81cpMpqqnLydzb5ppW+xN/dtSjIabc3vh/iY\nFmBZljt2GgjjjwzMCrN4V8xDqH7a1LFQZkDezRYcZM2V5SpdXIm5AidbRmNNaztd\nR0xDEuUnLvRLDkt0I3g5D/TdyMIyKiVvP2CBtg1ZAoGBAI6KUDRS3wGUwoKwPAZ9\nCxhltLdTGjhTYoSPxDJLI1Msknc6NFc00i6eltfFnusOTeZRbBOV9Dctdj2qpYUo\nUzTu6oytAkcVAfZpNH3ov9AN/aEE9qhqYW7cKUUUEhloDXCAnHjAO1SWObkFPe4h\nEyOEqB1lfXigTyord4eI5t6F\n-----END PRIVATE KEY-----\n",
+  "client_email": "cloudnaturallanguageapi@bankerchat-177104.iam.gserviceaccount.com",
+  "client_id": "114599164532186295043",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cloudnaturallanguageapi%40bankerchat-177104.iam.gserviceaccount.com"
+}
